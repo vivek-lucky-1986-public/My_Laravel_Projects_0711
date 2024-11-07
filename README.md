@@ -79,9 +79,12 @@ It uses **Laravel** as the backend API and **React** for building the user inter
 
    ```dotenv
    DB_CONNECTION=mongodb
-   DB_HOST=127.0.0.1
+   ## MongoDB Atlas
+   DB_HOST=<MongoDB_Atlas_Host>
    DB_PORT=27017
-   DB_DATABASE=task_management
+   DB_DATABASE=tasksmgmtdb
+   DB_USERNAME=<MongoDB_Username>
+   DB_PASSWORD=<MongoDB_Password>
    ```
 
    If you're using MongoDB Atlas, update the `DB_HOST` with your Atlas connection string.
