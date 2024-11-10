@@ -17,7 +17,7 @@ class TaskController extends Controller
     // Create a new task
     public function store(Request $request)
     {
-        Log::info('Request Data:', $request->all());
+        // Log::info('Request Data:', $request->all());
         $task = Task::create($request->all());
         return response()->json($task, 201);
     }
@@ -32,7 +32,7 @@ class TaskController extends Controller
     public function update(Request $request, $id)
     {
         $task = Task::findOrFail($id);
-        Log::info('Request Data:', $request->all());
+        // Log::info('Request Data:', $request->all());
         $task->update($request->all());
         return response()->json($task, 200);
     }
