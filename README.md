@@ -221,7 +221,7 @@ PATCH /api/tasks/1/complete
 
 - **Status Code**: `200 OK`
 - **Response Body**:
-  - Returns the updated task object with the `is_complete` field toggled.
+  - Returns the updated task object with the `completed` field toggled.
 
 **Response Example**:
 
@@ -230,7 +230,7 @@ PATCH /api/tasks/1/complete
     "id": 1,
     "title": "Complete project",
     "description": "Finish all pending tasks",
-    "is_complete": true,
+    "completed": true,
     "created_at": "2024-11-10T10:00:00.000000Z",
     "updated_at": "2024-11-10T12:00:00.000000Z"
 }
@@ -242,7 +242,7 @@ PATCH /api/tasks/1/complete
 
 **Notes**:
 
-- This endpoint toggles the `is_complete` status of the task.
+- This endpoint toggles the `completed` status of the task.
 - You can call this endpoint repeatedly to toggle between "complete" and "incomplete" states for a task.
 
 ---
