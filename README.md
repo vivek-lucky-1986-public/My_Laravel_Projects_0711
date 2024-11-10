@@ -59,8 +59,9 @@ It uses **Laravel** as the backend API and **React** for building the user inter
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/task-management-app.git
-   cd task-management-app
+   # git clone https://github.com/your-username/task-management-app.git
+   git clone -b laravel-react-taskmanager --single-branch https://github.com/vivek-lucky-1986-public/My_Laravel_Projects_0711.git <destination-folder>
+   cd <destination-folder>
    ```
 
 2. Install PHP dependencies using Composer:
