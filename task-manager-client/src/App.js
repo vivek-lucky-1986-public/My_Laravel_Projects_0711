@@ -1,13 +1,11 @@
+import './App.css';
 import React from 'react';
-import TaskList from './components/TaskList';
-import TaskForm from './components/TaskForm';
-import './App.css';  // If using App.css for styling
+import TaskManager from './components/TaskManager';
 
 function App() {
     return (
         <div className="App">
-            <TaskForm />
-            <TaskList />
+            <TaskManager />
         </div>
     );
 }

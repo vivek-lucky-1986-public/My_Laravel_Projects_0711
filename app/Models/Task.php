@@ -11,5 +11,5 @@ class Task extends MongoDBModel
     use HasFactory;
 
     // Add the 'title' and 'description' to the fillable property
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'completed'];
 }

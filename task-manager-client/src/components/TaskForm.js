@@ -1,33 +1,46 @@
-import React, { useState } from 'react';
-import api from '../api';
+import React, { useState, useEffect } from 'react';
 
-const TaskForm = () => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+const TaskForm = ({ addTask, updateTask, editTask, setEditTask }) => {
+    const [task, setTask] = useState({ title: '', description: '' });
 
-    const handleSubmit = async (e) => {
+    // Update form fields if editTask changes
+    useEffect(() => {
+        if (editTask) {
+            setTask(editTask);
+        } else {
+            setTask({ title: '', description: '' });
+        }
+    }, [editTask]);
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        await api.post('/tasks', { title, description });
-        setTitle('');
-        setDescription('');
+
+        if (editTask) {
+            updateTask(task); // Call updateTask if editing
+        } else {
+            addTask(task); // Call addTask if adding new task
+        }
+
+        setTask({ title: '', description: '' });
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Create Task</h2>
+            <h2>{editTask ? "Edit Task" : "Add New Task"}</h2>
             <input
                 type="text"
                 placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={task.title}
+                onChange={(e) => setTask({ ...task, title: e.target.value })}
                 required
             />
             <textarea
                 placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            />
-            <button type="submit">Add Task</button>
+                value={task.description}
+                onChange={(e) => setTask({ ...task, description: e.target.value })}
+            ></textarea>
+            <button type="submit">{editTask ? "Update Task" : "Add Task"}</button>
+            {editTask && <button onClick={() => setEditTask(null)}>Cancel</button>}
         </form>
     );
 };

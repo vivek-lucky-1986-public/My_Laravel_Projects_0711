@@ -1,31 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import api from '../api';
+import React from 'react';
 
-const TaskList = () => {
-    const [tasks, setTasks] = useState([]);
-
-    useEffect(() => {
-        fetchTasks();
-    }, []);
-
-    const fetchTasks = async () => {
-        const response = await api.get('/tasks');
-        setTasks(response.data);
-    };
-
+const TaskList = ({ tasks, deleteTask, markAsComplete, setEditTask }) => {
     return (
-        <div>
-            <h1>Task List</h1>
-            <ul>
-                {tasks.map((task) => (
-                    <li key={task.id}>
-                        <h3>{task.title}</h3>
-                        <p>{task.description}</p>
-                        <p>Status: {task.completed ? 'Completed' : 'Pending'}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul>
+            {tasks.map(task => (
+                <li key={task.id}>
+                    <h2>{task.title}</h2>
+                    <p>{task.description}</p>
+                    <p>Status: {task.completed ? "Completed" : "Incomplete"}</p>
+                    <button onClick={() => markAsComplete(task.id)}>
+                        Mark as Complete
+                    </button>
+                    <button onClick={() => deleteTask(task.id)}>Delete</button>
+                    <button onClick={() => setEditTask(task)}>Edit</button>
+                </li>
+            ))}
+        </ul>
     );
 };
 
