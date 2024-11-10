@@ -200,6 +200,51 @@ This section would include details of your backend routes and API endpoints. For
 - **URL**: `/api/tasks/{id}`
 - **Response**: Returns a success message.
 
+#### Mark Task as Complete
+
+**Endpoint**: `PATCH /api/tasks/{id}/complete`
+
+**Description**: This endpoint toggles the completion status of a specific task. If the task is marked as incomplete, it will be set to complete, and vice versa.
+
+**Request Parameters**:
+
+- **Path Parameter**:
+  - `id` (integer, required): The ID of the task to be marked as complete.
+
+**Request Example**:
+
+```http
+PATCH /api/tasks/1/complete
+```
+
+**Response**:
+
+- **Status Code**: `200 OK`
+- **Response Body**:
+  - Returns the updated task object with the `is_complete` field toggled.
+
+**Response Example**:
+
+```json
+{
+    "id": 1,
+    "title": "Complete project",
+    "description": "Finish all pending tasks",
+    "is_complete": true,
+    "created_at": "2024-11-10T10:00:00.000000Z",
+    "updated_at": "2024-11-10T12:00:00.000000Z"
+}
+```
+
+**Error Responses**:
+
+- `404 Not Found`: Returned if the task with the given `id` does not exist.
+
+**Notes**:
+
+- This endpoint toggles the `is_complete` status of the task.
+- You can call this endpoint repeatedly to toggle between "complete" and "incomplete" states for a task.
+
 ---
 
 ## Contributors
