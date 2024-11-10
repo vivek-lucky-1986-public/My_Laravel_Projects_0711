@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "1",
+    "title": "Complete React App",
+    "description": "Finish building the React app for task management with all required features.",
+    "completed": true
+  },
+  {
+    "_id": "2",
+    "title": "Write API Documentation",
+    "description": "Write the API documentation for the task management app, including endpoints and usage.",
+    "completed": false
+  },
+  {
+    "_id": "3",
+    "title": "Fix bug in TaskManager",
+    "description": "Fix the bug where tasks are not updating correctly when marked as complete.",
+    "completed": false
+  },
+  {
+    "_id": "4",
+    "title": "Prepare for team meeting",
+    "description": "Prepare a presentation and gather the latest updates for the upcoming team meeting.",
+    "completed": true
+  },
+  {
+    "_id": "5",
+    "title": "Update Laravel dependencies",
+    "description": "Update the Laravel framework and all related dependencies to their latest stable versions.",
+    "completed": false
+  },
+  {
+    "_id": "6",
+    "title": "Create unit tests for new feature",
+    "description": "Write unit tests to cover the new feature added to the task management app to ensure quality.",
+    "completed": true
+  },
+  {
+    "_id": "7",
+    "title": "Deploy React app to production",
+    "description": "Deploy the finished React app to a live production environment and verify everything works as expected.",
+    "completed": false
+  },
+  {
+    "_id": "8",
+    "title": "Refactor database models",
+    "description": "Refactor and optimize the database models to ensure scalability and performance.",
+    "completed": true
+  },
+  {
+    "_id": "9",
+    "title": "Clean up old codebase",
+    "description": "Remove unused code and refactor old parts of the codebase to improve maintainability.",
+    "completed": false
+  },
+  {
+    "_id": "10",
+    "title": "Setup MongoDB cluster",
+    "description": "Set up a MongoDB cluster for the task management app to improve performance and scalability.",
+    "completed": false
+  }
+]
