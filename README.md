@@ -119,7 +119,7 @@ It uses **Laravel** as the backend API and **React** for building the user inter
 3. Create a `.env` file for the React app, and set the backend API URL:
 
    ```env
-   REACT_APP_API_URL=http://127.0.0.1:8000/api
+   REACT_APP_API_URL=http://localhost:8000/api/tasks
    ```
 
 4. Run the React development server:
