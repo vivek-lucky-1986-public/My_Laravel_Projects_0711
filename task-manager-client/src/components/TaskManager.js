@@ -8,6 +8,10 @@ const apiUrl = 'http://localhost:8000/api/tasks';
 const TaskManager = () => {
     const [tasks, setTasks] = useState([]);
     const [editTask, setEditTask] = useState(null); // Holds the task being edited
+    useEffect(() => {
+        // Change the document title when the component mounts
+        document.title = "Task Manager App";
+    }, []);
 
     // Fetch tasks from the API
     const fetchTasks = async () => {
