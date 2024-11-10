@@ -150,3 +150,18 @@ button:hover {
 textarea{
     height: 200px;
 }
+
+/* Disabled button with blur effect */
+.mark-cmpl-btn:disabled {
+  pointer-events: none;    /* Disable the button interaction */
+  opacity: 0.5;            /* Make it semi-transparent */
+  filter: blur(3px);       /* Blur the button to make it look disabled */
+  cursor: not-allowed;     /* Change cursor to indicate disabled state */
+}
+
+.del-task-btn:disabled {
+  pointer-events: none;    /* Disable the button interaction */
+  opacity: 0.5;            /* Make it semi-transparent */
+  filter: blur(3px);       /* Blur the button to make it look disabled */
+  cursor: not-allowed;     /* Change cursor to indicate disabled state */
+}

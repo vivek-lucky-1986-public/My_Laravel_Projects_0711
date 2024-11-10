@@ -8,15 +8,16 @@ const TaskList = ({ tasks, deleteTask, markAsComplete, setEditTask }) => {
                 <li key={task.id}>
                     <h2>{task.title}</h2>
                     <p>{task.description}</p>
-                    <p>Status: {task.completed ? "Completed" : "Incomplete"}</p>
-                    <button onClick={() => markAsComplete(task.id)}
+                    <p>Status: {task.completed ? <b>Completed</b> : "Incomplete"}</p>
+                    <button className="mark-cmpl-btn undo-complete" onClick={() => markAsComplete(task.id)}
                     disabled={loadingTask === task.id || task.completed}
                     >
                     {loadingTask === task.id ? "Processing..." : task.completed
-                     ? "Undo Complete" : "Mark As Complete"}
+                     ? "Mark As Complete" : "Mark As Complete"}
                     </button>
                     {/*<button onClick={() => deleteTask(task.id)}>Delete</button>*/}
-                     <button
+                     <button className="del-task-btn"
+
                         onClick={() => deleteTask(task.id)}
                         disabled={loadingTask === task.id}
                     >
